@@ -4,4 +4,4 @@
 ### Example below👇
 ![111](https://user-images.githubusercontent.com/79236612/130445758-98d6ce35-bdf3-47cb-9431-2fbbe8f01d1c.png) <br></br> Input the date you want to know and the program will show you the number of local cases and imported cases based on CDC'S website
 ---
-###
+### Because CDC's website announce the confirmed cases in many different way, please fell free to tell me if there is any wrong output😄.
