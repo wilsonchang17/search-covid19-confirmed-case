@@ -19,7 +19,7 @@ time_ = time_.replace("/",".")
 
 option = webdriver.ChromeOptions()
 option.add_argument("headless")
-browser = webdriver.Chrome("D:\google download\chromedriver_win32\chromedriver.exe", options=option)
+browser = webdriver.Chrome("D:\google download\chromedriver_win32 (1)\chromedriver.exe", options=option)
 browser.get("https://www.cdc.gov.tw/Bulletin/List/MmgtpeidAR5Ooai4-fgHzQ")
 
 elem = browser.find_element_by_xpath('//*[@id="startTime"]')
@@ -62,12 +62,17 @@ for i in range(0,len(arr)):
             else:
                 break
             j = j-1
+
 print("本土案例為: ",end = "")
-for i in range(len(num1)-1,-1,-1):
-    print(num1[i],end="")
+if num1 == []:
+    print("0",end = "")
+else:
+    for i in range(len(num1)-1,-1,-1):
+        print(num1[i],end="")
 print()
 print("境外移入為: ",end = "")
-for i in range(len(num2)-1,-1,-1):
-    print(num2[i],end="")
-        
-   
+if num2 == []:
+    print("0")
+else:
+    for i in range(len(num2)-1,-1,-1):
+        print(num2[i],end="")
