@@ -8,6 +8,35 @@ from selenium.webdriver.common.action_chains import ActionChains
 import requests
 from bs4 import BeautifulSoup
 
+def find(arr):
+    for i in range(0,len(arr)):
+        if (arr[i]=="例" and  arr[i+1]=="本" and arr[i+2]=="土"):
+
+            j=i-1
+            while(1):
+                if(arr[j]=='9' or arr[j]=='8' or arr[j]=='7' or arr[j]=='6' or arr[j]=='5' or arr[j]=='4' or arr[j]=='3' or arr[j]=='2' or arr[j]=='1' or arr[j]=='0'):
+                    num1.append(arr[j])
+                else:
+                    break
+                j = j-1
+        if arr[i]=="例" and  arr[i+1]=="境" and arr[i+2]=="外":
+            j=i-1
+            while(1):
+                if(arr[j]=='9' or arr[j]=='8' or arr[j]=='7' or arr[j]=='6' or arr[j]=='5' or arr[j]=='4' or arr[j]=='3' or arr[j]=='2' or arr[j]=='1' or arr[j]=='0'):
+                    num2.append(arr[j])
+                else:
+                    break
+                j = j-1
+        if arr[i]=="-" and  arr[i+1]=="1" and arr[i+2]=="9" and arr[i+3]=="本" and arr[i+4]=="土":
+            j=i-7
+            while(1):
+                if(arr[j]=='9' or arr[j]=='8' or arr[j]=='7' or arr[j]=='6' or arr[j]=='5' or arr[j]=='4' or arr[j]=='3' or arr[j]=='2' or arr[j]=='1' or arr[j]=='0'):
+                    num3.append(arr[j])
+                else:
+                    break
+                j = j-1
+
+
 url = 'https://www.cdc.gov.tw/Bulletin/List/MmgtpeidAR5Ooai4-fgHzQ'
 html = requests.get(url) 
 html.encoding = 'utf8' 
@@ -43,35 +72,6 @@ num2 = []
 num3 = []
 
 
-def find(arr):
-    for i in range(0,len(arr)):
-        if (arr[i]=="例" and  arr[i+1]=="本" and arr[i+2]=="土"):
-
-            j=i-1
-            while(1):
-                if(arr[j]=='9' or arr[j]=='8' or arr[j]=='7' or arr[j]=='6' or arr[j]=='5' or arr[j]=='4' or arr[j]=='3' or arr[j]=='2' or arr[j]=='1' or arr[j]=='0'):
-                    num1.append(arr[j])
-                else:
-                    break
-                j = j-1
-        if arr[i]=="例" and  arr[i+1]=="境" and arr[i+2]=="外":
-            j=i-1
-            while(1):
-                if(arr[j]=='9' or arr[j]=='8' or arr[j]=='7' or arr[j]=='6' or arr[j]=='5' or arr[j]=='4' or arr[j]=='3' or arr[j]=='2' or arr[j]=='1' or arr[j]=='0'):
-                    num2.append(arr[j])
-                else:
-                    break
-                j = j-1
-        if arr[i]=="-" and  arr[i+1]=="1" and arr[i+2]=="9" and arr[i+3]=="本" and arr[i+4]=="土":
-            j=i-7
-            while(1):
-                if(arr[j]=='9' or arr[j]=='8' or arr[j]=='7' or arr[j]=='6' or arr[j]=='5' or arr[j]=='4' or arr[j]=='3' or arr[j]=='2' or arr[j]=='1' or arr[j]=='0'):
-                    num3.append(arr[j])
-                else:
-                    break
-                j = j-1
-                
-
 for i in data:
     if i.text[0] == '新' and i.text[1] == '增':
         arr = i.text
@@ -101,3 +101,6 @@ if num2 == []:
 else:
     for i in range(len(num2)-1,-1,-1):
         print(num2[i],end="")
+        
+        
+        
