@@ -43,7 +43,7 @@ html.encoding = 'utf8'
 sp = BeautifulSoup(html.text, 'lxml')
 
 time_ = input("請輸入時間")
-print(time_)
+print("查詢日期為:  "time_)
 time_ = time_.replace("/",".")
 
 option = webdriver.ChromeOptions()
