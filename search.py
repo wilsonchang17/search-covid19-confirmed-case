@@ -37,11 +37,6 @@ def find(arr):
                 j = j-1
 
 
-url = 'https://www.cdc.gov.tw/Bulletin/List/MmgtpeidAR5Ooai4-fgHzQ'
-html = requests.get(url) 
-html.encoding = 'utf8' 
-sp = BeautifulSoup(html.text, 'lxml')
-
 time_ = input("請輸入時間")
 print("查詢日期為:  ",time_)
 time_ = time_.replace("/",".")
