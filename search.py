@@ -43,7 +43,7 @@ time_ = time_.replace("/",".")
 
 option = webdriver.ChromeOptions()
 option.add_argument("headless")
-browser = webdriver.Chrome("D:\google download\chromedriver_win32 (1)\chromedriver.exe", options=option)
+browser = webdriver.Chrome("D:\google download\chromedriver_win32 (1)\chromedriver.exe", options=option)# chromedriver location in ur computer
 browser.get("https://www.cdc.gov.tw/Bulletin/List/MmgtpeidAR5Ooai4-fgHzQ")
 
 elem = browser.find_element_by_xpath('//*[@id="startTime"]')
