@@ -51,6 +51,7 @@ def find(arr):
                 if arr[j] == "C":
                     break
                 j += 1
+                
 
 
 
@@ -84,6 +85,7 @@ num2 = [] #境外
 num3 = [] #本土特殊情況
 num4 = [] #均為境外移入
 num5 = [] #均為境外移入 新版
+num6 = [] #均為境外移入 包含國家
 
 for i in data:
     if i.text[0] == '新' and i.text[1] == '增':
